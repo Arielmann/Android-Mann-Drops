@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="ariel.manndrops.game.viewmodel.RainDropViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rainDropLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationX="@{viewModel.rainDropXCoor}"
+        android:translationY="@{viewModel.rainDropYCoor}"
+        tools:context="ariel.manndrops.game.view.RainDropView"
+
+        >
+
+        <ImageView
+            android:id="@+id/rainDropImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/raindrop" />
+
+        <TextView
+            android:id="@+id/rainDropText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/rainDropTextSize"
+            android:layout_alignLeft="@+id/rainDropImage"
+            android:layout_alignTop="@+id/rainDropImage"
+            android:layout_alignRight="@+id/rainDropImage"
+            android:layout_alignBottom="@+id/rainDropImage"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:text="@{viewModel.exercise}"
+            android:textColor="#000000" />
+    </RelativeLayout>
+</layout>
+
